@@ -70,6 +70,11 @@
         padding: 3rem 1.5rem;
     }
 
+    .about-content p {
+        max-width: 100%;
+    }
+
+
     .about-content {
         flex-direction: column;
         text-align: center;
@@ -136,6 +141,10 @@
     .skills {
         font-size: 1.8rem;
     }
+
+    .portfolio-item img {
+    height: 220px;
+}
 }
 
 @media screen and (max-width: 320px) {
@@ -173,7 +182,9 @@
         gap: 1rem;
     }
 
-   
+   .portfolio-item img {
+    height: 190px;
+}
 }
 
 
