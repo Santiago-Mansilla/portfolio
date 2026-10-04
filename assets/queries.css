@@ -1,42 +1,67 @@
 @media screen and (max-width: 1200px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .portfolio-item a,
+    .portfolio-item:nth-child(even) a {
+        grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.8fr);
+    }
+
+    .portfolio-info {
+        padding: 2.5rem;
     }
 }
 
 @media screen and (max-width: 992px) {
     h1 {
-        font-size: 2.8rem;
+        font-size: 3.2rem;
     }
-    
+
     h2 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
     }
-    
-    .hero h1 {
-        font-size: 3rem;
+
+    .hero {
+        min-height: 580px;
+        padding: 4rem;
+    }
+
+    .portfolio-item a,
+    .portfolio-item:nth-child(even) a {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item:nth-child(even) img {
+        order: initial;
+    }
+
+    .portfolio-info {
+        padding: 2.5rem;
     }
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem;
+    }
+
     .menu {
         position: fixed;
         left: -100%;
         top: 4rem;
-        flex-direction: column;
-        background-color: #1e1e1e;
         width: 100%;
+        padding: 2rem 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: #151515;
+        border-bottom: 1px solid #292929;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    }
-
-    .menu.active {
-        left: 0;
+        transition: left 0.3s ease;
     }
 
     .menu li {
-        margin: 2.5rem 0;
+        margin: 1.2rem 0;
+    }
+
+    .menu a {
+        color: #f2f2f0;
     }
 
     .hamburger {
@@ -58,47 +83,55 @@
     .menu-toggle:checked ~ .hamburger .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-}
 
-
-
-    .hero h1 {
-        font-size: 2.5rem;
+    main {
+        padding: 85px 1rem 0;
     }
 
     section {
-        padding: 3rem 1.5rem;
+        padding: 4rem 1.5rem;
     }
 
-    .about-content p {
-        max-width: 100%;
-    }
-
-
-    .about-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .avatar {
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-
-    .skills {
-        font-size: 2rem;
-    }
-
-
-@media screen and (max-width: 576px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .hero {
+        padding: 3rem 2rem;
     }
 
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.7rem;
     }
 
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    #portfolio {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #portfolio h2 {
+        padding: 0 1.5rem;
+    }
+
+    .portfolio-grid {
+        gap: 2rem;
+    }
+
+    .portfolio-item a,
+    .portfolio-item:nth-child(even) a {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item:nth-child(even) img {
+        order: initial;
+    }
+
+    .portfolio-info {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
     h1 {
         font-size: 2.4rem;
     }
@@ -108,13 +141,58 @@
     }
 
     section {
-        padding: 2.5rem 1rem;
+        padding: 3rem 1rem;
+    }
+
+    .hero {
+        min-height: 480px;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about-content p {
+        font-size: 1rem;
+    }
+
+    .skills {
+        gap: 1.3rem;
+    }
+
+    .skills i {
+        font-size: 2rem;
+    }
+
+    #portfolio h2 {
+        padding: 0 1rem;
+    }
+
+    .portfolio-info {
+        padding: 1.5rem;
+    }
+
+    .portfolio-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .portfolio-info p {
+        font-size: 0.95rem;
+    }
+
+    #contact {
+        padding: 4rem 1.5rem;
     }
 }
 
 @media screen and (max-width: 480px) {
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .hero h1 {
@@ -122,29 +200,22 @@
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
-    .cta-button {
-        padding: 0.6rem 1.2rem;
+    .hero a,
+    #contact .cta-button {
+        padding: 0.8rem 1.3rem;
         font-size: 0.9rem;
     }
 
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
     .skills {
-        font-size: 1.8rem;
+        gap: 1rem;
     }
 
-    .portfolio-item img {
-    height: 220px;
-}
+    .skills i {
+        font-size: 1.8rem;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -156,114 +227,23 @@
         font-size: 1.8rem;
     }
 
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    .cta-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.8rem;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
     h2 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     section {
-        padding: 1.5rem 0.6rem;
+        padding: 2.5rem 0.8rem;
+    }
+
+    .portfolio-info {
+        padding: 1.3rem;
     }
 
     .skills {
+        gap: 0.8rem;
+    }
+
+    .skills i {
         font-size: 1.5rem;
-        gap: 1rem;
-    }
-
-   .portfolio-item img {
-    height: 190px;
-}
-}
-
-
-.portfolio-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover::before {
-    opacity: 1;
-}
-
-.portfolio-info {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.7);
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-info {
-    transform: translateY(0);
-}
-
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-    outline: 2px solid #ffd700;
-    outline-offset: 2px;
-}
-
-
-@media print {
-    body {
-        color: #000;
-        background: #fff;
-    }
-
-    header, footer, .cta-button, form {
-        display: none;
-    }
-
-    main {
-        padding-top: 0;
-    }
-
-    h1, h2 {
-        color: #000;
-    }
-
-    .portfolio-item {
-        page-break-inside: avoid;
     }
 }
-
-
-
